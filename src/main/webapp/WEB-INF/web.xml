@@ -1,15 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-	<welcome-file-list>
-    	<welcome-file>index.html</welcome-file>
-    	<welcome-file>index.jsp</welcome-file>
-    	<welcome-file>index.htm</welcome-file>
-    	<welcome-file>default.html</welcome-file>
-    	<welcome-file>default.jsp</welcome-file>
-    	<welcome-file>default.htm</welcome-file>
-  	</welcome-file-list>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+    </welcome-file-list>
+
+    <!-- Define your servlets here -->
+    <servlet>
+        <servlet-name>CalculatorServlet</servlet-name>
+        <servlet-class>com.example.CalculatorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalculatorServlet</servlet-name>
+        <url-pattern>/calculate</url-pattern> <!-- Adjust this URL pattern as necessary -->
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <servlet-class>com.example.HelloWorldServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <url-pattern>/hello</url-pattern> <!-- Adjust this URL pattern as necessary -->
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TempConvertServlet</servlet-name>
+        <servlet-class>com.example.TempConvertServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TempConvertServlet</servlet-name>
+        <url-pattern>/tempconvert</url-pattern> <!-- Adjust this URL pattern as necessary -->
+    </servlet-mapping>
+
 </web-app>
