@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Web Application</title>
+    <script src="myAJAXlib.js"></script>
+    <script src="myJS.js"></script>
+    <style>
+        .inline {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #calculatorResult, #temperatureResult, #greetingResult {
+            margin-left: 10px;
+            display: inline-block;
+        }
+       
+        .temperature-container, .calculator-container, .greeting-container {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Application</h1>
+
+    <!-- Input name -->
+    <div class="greeting-container">
+        <input type="text" id="username" placeholder="Enter your name" required>
+        <button type="button" onclick="sendGreeting();">Submit</button>
+        <span id="greetingResult" class="inline"></span>
+    </div>
+
+    <!-- Calculator -->
+    <div class="calculator-container">
+        <input type="text" id="num1" placeholder="Number 1" required class="inline">
+        <select id="operation" class="inline">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <input type="text" id="num2" placeholder="Number 2" required class="inline">
+        <button type="button" onclick="calculate();" class="inline">=</button>
+        <span id="calculatorResult" class="inline"></span>
+    </div>
+
+    <!-- Temperature-->
+    <div class="temperature-container">
+        <input type="text" id="tempValue" placeholder="Temperature" required>
+        <select id="conversionType">
+            <option value="CtoF">°C to °F</option>
+            <option value="FtoC">°F to °C</option>
+        </select>
+        <button type="button" onclick="convertTemperature();">Convert</button>
+        <span id="temperatureResult" class="inline"></span>
+    </div>
+
+</body>
+</html>

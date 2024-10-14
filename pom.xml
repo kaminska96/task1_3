@@ -1,0 +1,109 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.webapp.soap.services</groupId>
+    <artifactId>SoapServiceIntegrationApp</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>22</release>
+                </configuration>
+            </plugin>
+
+            
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
+            </plugin>
+
+            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+
+                    <execution>
+                        <id>wsdlHello</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlUrls>
+                                <wsdlUrl>https://apps.learnwebservices.com/services/hello?WSDL</wsdlUrl>
+                            </wsdlUrls>
+                            <keep>true</keep>
+                            <packageName>com.soap.ws.client.hello</packageName>
+                            <sourceDestDir>src/main/java</sourceDestDir>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>wsdlCalc</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlUrls>
+                                <wsdlUrl>http://www.dneonline.com/calculator.asmx?WSDL</wsdlUrl>
+                            </wsdlUrls>
+                            <keep>true</keep>
+                            <packageName>com.soap.ws.client.calc</packageName>
+                            <sourceDestDir>src/main/java</sourceDestDir>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>wsdlTempConvert</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlUrls>
+                                <wsdlUrl>https://www.w3schools.com/xml/tempconvert.asmx?WSDL</wsdlUrl>
+                            </wsdlUrls>
+                            <keep>true</keep>
+                            <packageName>com.soap.ws.client.tempconvert</packageName>
+                            <sourceDestDir>src/main/java</sourceDestDir>
+                        </configuration>
+                    </execution>  
+
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+        
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-ri</artifactId>
+            <version>2.3.1</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+
+</project>
