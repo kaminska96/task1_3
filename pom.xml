@@ -11,10 +11,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>17</java.version> <!-- Define Java version property -->
+        <java.version>17</java.version>
     </properties>
 
-    <!-- Repositories should be directly under <project> -->
     <repositories>
         <repository>
             <id>central</id>
@@ -41,7 +40,7 @@
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
             <artifactId>jaxws-rt</artifactId>
-            <version>2.3.3</version> <!-- Updated version for better compatibility -->
+            <version>2.3.3</version>
         </dependency>
 
         <!-- JAX-WS API -->
@@ -51,18 +50,18 @@
             <version>2.3.1</version>
         </dependency>
 
-        <!-- JAXB Runtime -->
-        <dependency>
-            <groupId>org.glassfish.jaxb</groupId>
-            <artifactId>jaxb-runtime</artifactId>
-            <version>2.3.3</version>
-        </dependency>
-
         <!-- JAXB API -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
+        </dependency>
+
+        <!-- JAXB Runtime -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.3</version>
         </dependency>
 
         <!-- JAX-WS Annotations -->
@@ -87,7 +86,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>${java.version}</release> <!-- Use property for flexibility -->
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
 
