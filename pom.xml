@@ -59,7 +59,7 @@
                         </goals>
                         <configuration>
                             <wsdlUrls>
-                                <wsdlUrl>http://www.dneonline.com/calculator.asmx?WSDL</wsdlUrl>
+                                <wsdlUrl>https://www.dneonline.com/calculator.asmx?WSDL</wsdlUrl>
                             </wsdlUrls>
                             <keep>true</keep>
                             <packageName>com.soap.ws.client.calc</packageName>
