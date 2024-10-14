@@ -11,45 +11,98 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>17</java.version> <!-- Define Java version property -->
     </properties>
+
+    <!-- Repositories should be directly under <project> -->
     <repositories>
-             <repository>
-                 <id>central</id>
-                 <url>https://repo.maven.apache.org/maven2</url>
-                 <releases>
-                     <enabled>true</enabled>
-                 </releases>
-                 <snapshots>
-                     <enabled>false</enabled>
-                 </snapshots>
-             </repository>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
+    <dependencies>
+        <!-- Servlet API -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JAX-WS Runtime -->
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>2.3.3</version> <!-- Updated version for better compatibility -->
+        </dependency>
+
+        <!-- JAX-WS API -->
+        <dependency>
+            <groupId>javax.xml.ws</groupId>
+            <artifactId>jaxws-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
+        <!-- JAXB Runtime -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+
+        <!-- JAXB API -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
+        <!-- JAX-WS Annotations -->
+        <dependency>
+            <groupId>javax.jws</groupId>
+            <artifactId>javax.jws-api</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <!-- Java Activation Framework -->
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>javax.activation-api</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+    </dependencies>
+
     <build>
-         
         <plugins>
-            
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>17</release>
+                    <release>${java.version}</release> <!-- Use property for flexibility -->
                 </configuration>
             </plugin>
 
-            
+            <!-- Maven WAR Plugin -->
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.3</version>
             </plugin>
 
-            
+            <!-- JAX-WS Maven Plugin -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>2.6</version>
                 <executions>
-
                     <execution>
                         <id>wsdlHello</id>
                         <goals>
@@ -94,24 +147,8 @@
                             <sourceDestDir>src/main/java</sourceDestDir>
                         </configuration>
                     </execution>  
-
                 </executions>
             </plugin>
-
         </plugins>
     </build>
-
-    <dependencies>
-        
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-
-        
-
-    </dependencies>
-
 </project>
