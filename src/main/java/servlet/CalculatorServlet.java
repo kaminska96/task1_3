@@ -44,7 +44,7 @@ public class CalculatorServlet extends HttpServlet {
                 break;
             case "divide":
                 if (num2 != 0) {
-           z        result = calculatorPort.divide(num1, num2);
+                    result = calculatorPort.divide(num1, num2);
                     operationName = "Division";
                 } else {
                     operationName = "Error";
