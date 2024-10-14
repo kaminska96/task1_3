@@ -20,7 +20,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>22</release>
+                    <release>17</release>
                 </configuration>
             </plugin>
 
@@ -98,12 +98,25 @@
         </dependency>
 
         
-        <dependency>
-            <groupId>com.sun.xml.ws</groupId>
-            <artifactId>jaxws-ri</artifactId>
-            <version>2.3.1</version>
-            <type>pom</type>
-        </dependency>
+    <dependency>
+        <groupId>com.sun.xml.ws</groupId>
+        <artifactId>jaxws-rt</artifactId>
+        <version>2.3.1</version>
+    </dependency>
+    
+    <!-- Add jaxws-api dependency if needed -->
+    <dependency>
+        <groupId>javax.xml.ws</groupId>
+        <artifactId>jaxws-api</artifactId>
+        <version>2.3.1</version>
+    </dependency>
+    
+    <!-- Add JAXB dependencies explicitly to avoid transitive issues -->
+    <dependency>
+        <groupId>org.glassfish.jaxb</groupId>
+        <artifactId>jaxb-runtime</artifactId>
+        <version>2.3.3</version>
+    </dependency>
     </dependencies>
 
 </project>
