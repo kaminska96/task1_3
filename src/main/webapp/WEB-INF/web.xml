@@ -12,7 +12,7 @@
         <welcome-file>default.htm</welcome-file>
     </welcome-file-list>
 
-    <!-- Define your servlets here -->
+<!--     <!-- Define your servlets here -->
     <servlet>
         <servlet-name>CalculatorServlet</servlet-name>
         <servlet-class>com.example.CalculatorServlet</servlet-class>
@@ -38,6 +38,6 @@
     <servlet-mapping>
         <servlet-name>TempConvertServlet</servlet-name>
         <url-pattern>/tempconvert</url-pattern> <!-- Adjust this URL pattern as necessary -->
-    </servlet-mapping>
+    </servlet-mapping> -->
 
 </web-app>
