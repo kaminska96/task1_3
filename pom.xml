@@ -12,9 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-
-    <build>
-         <repositories>
+    <repositories>
              <repository>
                  <id>central</id>
                  <url>https://repo.maven.apache.org/maven2</url>
@@ -25,7 +23,10 @@
                      <enabled>false</enabled>
                  </snapshots>
              </repository>
-         </repositories>
+    </repositories>
+
+    <build>
+         
         <plugins>
             
             <plugin>
